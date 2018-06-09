@@ -2,7 +2,7 @@ const assert = require('assert')
 
 const sortByString = require('./questionOne')
 const decodeString = require('./questionTwo')
-const changePossibilities = require('./questionOne')
+const changePossibilities = require('./questionThree')
 
 describe('Spotify Fellowship Question tests', function (){
   
@@ -22,11 +22,17 @@ describe('Spotify Fellowship Question tests', function (){
     it('For s="2[b3[a]]" the output should be "baaabaaa"', function(){
       assert.equal(decodeString("2[b3[a]]"), "baaabaaa")
     })
+    it('For s="" the output should throw error "invalid entry"', function(){
+      assert.throws(decodeString,Error, "invalid entry")
+    })
   })
-  //   it('Question 3 - changePossibilities function', function(){
   
-  //   })
-  // })
+  describe.only('Question 3 - changePossibilities function', function(){
+      it('for amount= 4 and denominations=[1,2,3] the output should equal to 4', function(){
+        assert.equal(changePossibilities(4,[1,2,3]), 4)
+      })
+    })
+  
 
 
 })
